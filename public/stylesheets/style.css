@@ -6,6 +6,22 @@ body {
   padding-top: 3.5rem;
 }
 
+address {
+  text-align: right;
+}
+
+#contact {
+  text-align: right;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.more-button {
+  float: right;
+}
+
 .resize-img {
   height: 500px;
 }
