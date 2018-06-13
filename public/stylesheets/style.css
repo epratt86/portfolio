@@ -1,3 +1,16 @@
+* {
+  font-family: 'Roboto Slab', serif;
+}
+
 body {
-  background-color: red;
+  padding-top: 3.5rem;
+}
+
+.resize-img {
+  height: 500px;
+}
+
+#logo {
+  width: 65%;
+  height: auto;
 }
