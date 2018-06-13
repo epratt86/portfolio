@@ -22,6 +22,18 @@ address {
   float: right;
 }
 
+.nav-link {
+  font-size: 1.75rem;
+}
+
 .resize-img {
   height: 500px;
+}
+
+.carousel-control-prev-icon {
+  margin-top: 50%;
+}
+
+.carousel-control-next-icon {
+  margin-top: 50%;
 }
