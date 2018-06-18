@@ -11,7 +11,11 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  res.render('index', {title: 'TA Marsh | Roofing'});
+  res.render('index', {title: 'Home | TA Marsh'});
+});
+
+app.get('/reviews', (req, res) => {
+  res.render('reviews', {title: 'Reviews | TA Marsh'})
 });
 
 app.listen(port, () => {
