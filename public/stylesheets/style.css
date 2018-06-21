@@ -41,3 +41,17 @@ address {
 .carousel-control-next-icon {
   margin-top: 50%;
 }
+
+.flash {
+  padding-top: 5em;
+  margin-bottom: -1rem;
+  text-align: center;
+}
+
+#box {
+  float: right;
+}
+
+#consultation {
+  float: right;
+}
