@@ -10,13 +10,13 @@ const path = require('path');
 const {User} = require('./models/user');
 const _ = require('lodash');
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8000;
 const app = express();
 const sessionStore = new session.MemoryStore;
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MARSH_DB);
+mongoose.connect(process.env.MONGODB_URI || process.env.MARSH_DB);
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
