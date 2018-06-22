@@ -3,6 +3,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const expressSanitizer = require('express-sanitizer');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
@@ -26,6 +27,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_PARSER));
+//expressSanitizer
+app.use(expressSanitizer());
 //express session middleware
 app.use(session({
   secret: process.env.SESSION,
