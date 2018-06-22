@@ -8,6 +8,7 @@ body {
 
 .main-content {
   padding-top: 7rem;
+  margin-bottom: 5rem;
 }
 
 address {
@@ -54,4 +55,10 @@ address {
 
 #consultation {
   float: right;
+  margin-right: -1.5rem;
+}
+
+#map {
+  width: 100%;
+  margin-bottom: 5rem;
 }

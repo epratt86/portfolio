@@ -14,6 +14,7 @@ const port = process.env.PORT;
 const app = express();
 const sessionStore = new session.MemoryStore;
 
+
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MARSH_DB);
 
@@ -44,6 +45,7 @@ app.use(function(req, res, next){
    next();
 });
 
+
 app.get('/', (req, res) => {
   res.render('index', {title: 'Home | TA Marsh'});
 });
@@ -51,7 +53,6 @@ app.get('/', (req, res) => {
 app.post('/user', (req, res) => {
   let body = _.pick(req.body, ['name', 'email', 'phone', 'comment']);
   let user = new User(body);
-
 
   user.save((err) => {
     if (err) {
@@ -63,8 +64,16 @@ app.post('/user', (req, res) => {
   });
 });
 
+app.get('/about', (req, res) => {
+  res.render('about', {title: 'About | TA Marsh'});
+});
+
 app.get('/reviews', (req, res) => {
   res.render('reviews', {title: 'Reviews | TA Marsh'});
+});
+
+app.get('/services', (req, res) => {
+  res.render('services', {title: 'Services | TA Marsh'});
 });
 
 app.get('/contact', (req, res) => {
