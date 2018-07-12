@@ -10,6 +10,8 @@ const mongoose = require('mongoose');
 const path = require('path');
 const {User} = require('./models/user');
 const _ = require('lodash');
+const nodemailer = require('nodemailer');
+const xoauth2 = require('xoauth2');
 
 const port = process.env.PORT || 8000;
 const app = express();
@@ -54,16 +56,38 @@ app.get('/', (req, res) => {
 });
 
 app.post('/user', (req, res) => {
-  let body = _.pick(req.body, ['name', 'email', 'phone', 'comment']);
-  let user = new User(body);
+  const body = _.pick(req.body, ['name', 'email', 'phone', 'comment']);
+  const user = new User(body);
+
+  const transport = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASS
+    }
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL,
+    to: 'ericpratt86@gmail.com',
+    subject: 'New Lead!',
+    html: `New contact information: ${user}`
+  };
 
   user.save((err) => {
     if (err) {
       req.flash('error', 'Oops! Something went wrong with your request.');
     } else {
-      req.flash('success', 'Your message has been sent.');
+      transport.sendMail(mailOptions, function (err, info) {
+        if (err) {
+          req.flash('error', 'Oops! Something went wrong with your request.');
+          res.redirect('/');
+        } else {
+          req.flash('success', 'Your message has been sent.');
+          res.redirect('/');
+        }
+      });
     }
-    res.redirect('/');
   });
 });
 
