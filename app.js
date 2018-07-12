@@ -64,7 +64,8 @@ app.post('/user', (req, res) => {
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASS
-    }
+    },
+    tls: {rejectUnauthorized: false}
   });
 
   const mailOptions = {
@@ -82,6 +83,7 @@ app.post('/user', (req, res) => {
         if (err) {
           req.flash('error', 'Oops! Something went wrong with your request.');
           res.redirect('/');
+          console.log(err);
         } else {
           req.flash('success', 'Your message has been sent.');
           res.redirect('/');
