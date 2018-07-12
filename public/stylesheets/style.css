@@ -2,25 +2,57 @@
   font-family: 'Roboto Slab', serif;
 }
 
-body {
-  padding-top: 7rem;
-}
-
-.main-content {
-  padding-top: 7rem;
-  margin-bottom: 5rem;
-}
-
 address {
   text-align: right;
 }
 
-#contact {
-  text-align: right;
+body {
+  padding-top: 7rem;
+}
+
+.carousel-control-prev-icon {
+  margin-top: 50%;
+}
+
+.carousel-control-next-icon {
+  margin-top: 50%;
 }
 
 .card-title {
   text-align: center;
+}
+
+.contact-us {
+  margin-top: 1em;
+}
+
+.estimate {
+  background-color: #d0ddf2;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.estimate-form {
+  justify-content: center;
+  align-content: center;
+}
+
+.flash {
+  padding-top: 5em;
+  margin-bottom: -1rem;
+  text-align: center;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+}
+
+.main-content {
+  padding-top: 5rem;
+  position: relative;
+  min-height: 80vh;
+  padding-bottom: 2.5rem;
 }
 
 .more-button {
@@ -35,30 +67,18 @@ address {
   height: 500px;
 }
 
-.carousel-control-prev-icon {
-  margin-top: 50%;
+.reviews {
+  margin-top: 2em;
 }
 
-.carousel-control-next-icon {
-  margin-top: 50%;
+.bigger {
+  font-size: 1.5em;
 }
 
-.flash {
-  padding-top: 5em;
-  margin-bottom: -1rem;
-  text-align: center;
-}
-
-#box {
-  float: right;
-}
-
-#consultation {
-  float: right;
-  margin-right: -1.5rem;
+#contact {
+  text-align: right;
 }
 
 #map {
   width: 100%;
-  margin-bottom: 5rem;
 }
