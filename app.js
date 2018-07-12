@@ -72,7 +72,7 @@ app.post('/user', (req, res) => {
     from: process.env.EMAIL,
     to: 'ericpratt86@gmail.com',
     subject: 'New Lead!',
-    html: `New contact information: ${user}`
+    html: `New contact information: <h1>Name: ${user.name},</h1> <h1>Email: ${user.email},</h1> <h1>Phone: ${user.phone},</h1> <h1>Comment: ${user.comment}</h1>`
   };
 
   user.save((err) => {
