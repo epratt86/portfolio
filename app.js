@@ -6,20 +6,19 @@ const exphbs = require('express-handlebars');
 const expressSanitizer = require('express-sanitizer');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
-const mongoose = require('mongoose');
+const http = require('http');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const passportLocalMongoose = require('passport-local-mongoose');
 const path = require('path');
-const {User} = require('./models/user');
-const _ = require('lodash');
-const nodemailer = require('nodemailer');
-const xoauth2 = require('xoauth2');
-
-const port = process.env.PORT || 8000;
 const app = express();
 const sessionStore = new session.MemoryStore;
+const { User } = require('./server/models/user');
+const { Form } = require('./server/models/form');
+const { mongoose } = require('./server/db/mongoose');
+const port = process.env.PORT || 8000;
 
 
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || process.env.MARSH_DB);
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -34,11 +33,18 @@ app.use(expressSanitizer());
 //express session middleware
 app.use(session({
   secret: process.env.SESSION,
-  resave: 'true',
+  resave: true,
   store: sessionStore,
   saveUninitialized: true,
   cookie: {maxAge: 60000 }
 }));
+
+//passport config
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use(flash());
 
@@ -50,64 +56,38 @@ app.use(function(req, res, next){
    next();
 });
 
-
 app.get('/', (req, res) => {
-  res.render('index', {title: 'Home | TA Marsh'});
+  res.render('landing', {title: 'Sartorius | Sign In', layout: 'no-header'});
 });
 
-app.post('/user', (req, res) => {
-  const body = _.pick(req.body, ['name', 'email', 'phone', 'comment']);
-  const user = new User(body);
+//create new account
+app.get('/register', (req, res) => {
+  res.render('register', {title: 'Sartorius | Create Account'});
+});
 
-  const transport = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASS
-    },
-    tls: {rejectUnauthorized: false}
-  });
-
-  const mailOptions = {
-    from: process.env.EMAIL,
-    to: 'ericpratt86@gmail.com',
-    subject: 'New Lead!',
-    html: `New contact information: <h1>Name: ${user.name},</h1> <h1>Email: ${user.email},</h1> <h1>Phone: ${user.phone},</h1> <h1>Comment: ${user.comment}</h1>`
-  };
-
-  user.save((err) => {
+app.post('/register', (req, res) => {
+  User.register(new User({ username : req.body.username }), req.body.password, function(err, user) {
     if (err) {
-      req.flash('error', 'Oops! Something went wrong with your request.');
-    } else {
-      transport.sendMail(mailOptions, function (err, info) {
-        if (err) {
-          req.flash('error', 'Oops! Something went wrong with your request.');
-          res.redirect('/');
-          console.log(err);
-        } else {
-          req.flash('success', 'Your message has been sent.');
-          res.redirect('/');
-        }
-      });
+        return res.render('register', { user : user });
     }
+
+    passport.authenticate('local')(req, res, function () {
+      res.redirect('/');
+    });
   });
 });
 
-app.get('/about', (req, res) => {
-  res.render('about', {title: 'About | TA Marsh'});
+//Log in
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/index',
+  failureRedirect: '/register'
+}));
+
+//index route
+app.get('/index', (req, res) => {
+  res.render('index', {title: 'Sartorius | Home'});
 });
 
-app.get('/reviews', (req, res) => {
-  res.render('reviews', {title: 'Reviews | TA Marsh'});
-});
-
-app.get('/services', (req, res) => {
-  res.render('services', {title: 'Services | TA Marsh'});
-});
-
-app.get('/contact', (req, res) => {
-  res.render('contact', {title: 'Contact | TA Marsh'});
-});
 
 app.listen(port, () => {
   console.log(`Server is running on: ${port}`);

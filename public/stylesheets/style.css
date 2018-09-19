@@ -1,84 +1,46 @@
-* {
-  font-family: 'Roboto Slab', serif;
-}
-
-address {
-  text-align: right;
-}
-
-body {
-  padding-top: 7rem;
-}
-
-.carousel-control-prev-icon {
-  margin-top: 50%;
-}
-
-.carousel-control-next-icon {
-  margin-top: 50%;
-}
-
-.card-title {
-  text-align: center;
-}
-
-.contact-us {
-  margin-top: 1em;
-}
-
-.estimate {
-  background-color: #d0ddf2;
-  text-align: center;
-  margin-top: 1em;
-}
-
-.estimate-form {
-  justify-content: center;
-  align-content: center;
-}
-
-.flash {
-  padding-top: 5em;
-  margin-bottom: -1rem;
-  text-align: center;
-}
-
-.footer {
-  bottom: 0;
+html, body {
+  background: #fcfbf7;
+  height: 100%;
   width: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 2.5rem;
 }
 
-.main-content {
-  padding-top: 5rem;
-  position: relative;
-  min-height: 80vh;
-  padding-bottom: 2.5rem;
+.logo {
+ font-size: 4rem;
 }
 
-.more-button {
-  float: right;
+
+.ui.stacked.segment:after {
+  content: none;
 }
 
-.nav-link {
-  font-size: 1.75rem;
+.ui.top.attached.segment.sign-up {
+  margin: auto;
+  width: 50%;
 }
 
-.resize-img {
-  height: 500px;
+.landing {
+  margin: auto;
+  width: 50%;
+  padding: 2rem; 
 }
 
-.reviews {
-  margin-top: 2em;
+.sign-up h2 {
+  text-align: center;
 }
 
-.bigger {
-  font-size: 1.5em;
-}
+@media only screen and (max-device-width:480px){
+  .landing {
+    margin: auto;
+    width: auto;
+    padding-top: 25%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .ui.top.attached.segment.sign-up {
+    width: auto;
+  }
 
-#contact {
-  text-align: right;
-}
-
-#map {
-  width: 100%;
 }
