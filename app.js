@@ -16,6 +16,7 @@ const sessionStore = new session.MemoryStore;
 const { User } = require('./server/models/user');
 const { Form } = require('./server/models/form');
 const { mongoose } = require('./server/db/mongoose');
+const indexRoute = require('./server/routes/index');
 const port = process.env.PORT || 8000;
 
 
@@ -56,38 +57,7 @@ app.use(function(req, res, next){
    next();
 });
 
-app.get('/', (req, res) => {
-  res.render('landing', {title: 'Sartorius | Sign In', layout: 'no-header'});
-});
-
-//create new account
-app.get('/register', (req, res) => {
-  res.render('register', {title: 'Sartorius | Create Account'});
-});
-
-app.post('/register', (req, res) => {
-  User.register(new User({ username : req.body.username }), req.body.password, function(err, user) {
-    if (err) {
-        return res.render('register', { user : user });
-    }
-
-    passport.authenticate('local')(req, res, function () {
-      res.redirect('/');
-    });
-  });
-});
-
-//Log in
-app.post('/login', passport.authenticate('local', {
-  successRedirect: '/index',
-  failureRedirect: '/register'
-}));
-
-//index route
-app.get('/index', (req, res) => {
-  res.render('index', {title: 'Sartorius | Home'});
-});
-
+app.use(indexRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on: ${port}`);

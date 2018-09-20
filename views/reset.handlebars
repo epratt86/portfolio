@@ -1,0 +1,17 @@
+<div class="ui container">
+  <div class="ui top attached segment box">
+    <h2>Reset Password</h2>
+    <hr>
+    <form class="ui form" action='/reset/{{token}}' method="POST">
+      <div class="field">
+        <label for="password">New Password:</label>
+        <input type="password" name="password" autofocus placeholder="new password">
+      </div>
+      <div class="field">
+        <label for="password">Confirm Password:</label>
+        <input type="password" name="confirm" autofocus placeholder="confirm password">
+      </div>
+      <button class="ui orange button">Submit</button>
+    </form>
+  </div>
+</div>

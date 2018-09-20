@@ -8,9 +8,20 @@ const UserSchema = new Schema({
     type: String,
     unique: true,
     trim: true,
+    required: true,
     minlength: 1
   },
-  password: String
+  password: {
+    type: String
+  },
+  email: {
+    type: String,
+    trim: true,
+    unique: true,
+    required: true
+  },
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 
 UserSchema.plugin(passportLocalMongoose);

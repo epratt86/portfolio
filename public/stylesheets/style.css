@@ -16,7 +16,7 @@ html, body {
   content: none;
 }
 
-.ui.top.attached.segment.sign-up {
+.ui.top.attached.segment.box {
   margin: auto;
   width: 50%;
 }
@@ -27,7 +27,7 @@ html, body {
   padding: 2rem; 
 }
 
-.sign-up h2 {
+.box h2 {
   text-align: center;
 }
 
@@ -39,7 +39,7 @@ html, body {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  .ui.top.attached.segment.sign-up {
+  .ui.top.attached.segment.box {
     width: auto;
   }
 
