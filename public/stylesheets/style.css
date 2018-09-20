@@ -18,7 +18,7 @@ html, body {
 
 .ui.top.attached.segment.box {
   margin: auto;
-  width: 50%;
+  width: 66%;
 }
 
 .landing {
@@ -28,6 +28,16 @@ html, body {
 }
 
 .box h2 {
+  text-align: center;
+}
+
+.ui.text.container.flash {
+  margin-top: -2rem;
+  padding-bottom: 1rem;
+}
+
+.ui.text.container.flash h2 {
+  font-size: 1rem;
   text-align: center;
 }
 

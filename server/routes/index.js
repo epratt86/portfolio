@@ -20,6 +20,7 @@ router.get('/index', (req, res) => {
 router.get('/register', (req, res) => {
   res.render('register', {title: 'Sartorius | Create Account'});
 });
+
 //create new account - post
 router.post('/register', (req, res) => {
   const newUser = new User({
@@ -31,10 +32,9 @@ router.post('/register', (req, res) => {
       console.log(err);
       return res.render('register', { error: err.message });
     }
-
     passport.authenticate('local')(req, res, function () {
-      //req.flash('success', `Welcome ${req.body.username}! You've successfully created an account.`)
-      res.redirect('/');
+      req.flash('success', `Welcome ${req.body.username}! You've successfully created an account.`)
+      res.redirect('/index');
     });
   });
 });
@@ -44,13 +44,17 @@ router.post('/login', passport.authenticate('local', {
   successRedirect: '/index',
   failureRedirect: '/register'
 }));
+//log out
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
 
 //User - show
 router.get('/users/:id', (req, res) => {
   User.findById(req.params.id, (err, foundUser) => {
     if (err) {
-      req.flash('error', 'Oops! Profile page not found.');
-      req.redirect('/');
+      res.render('index', {error: 'Oops! Profile not found'});
     } else {
       res.render('userProfile', {user: foundUser, title: 'Sartorius | Profile'});
     };

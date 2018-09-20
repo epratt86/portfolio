@@ -11,16 +11,31 @@
 
   <header>
     <div class="ui fixed menu">
-      <a href="/" class="header item">
+      <a href="/index" class="header item">
         <img class="logo" src="/img/sartorius.jpg">
       </a>
-      <a href="/" class="item">New Upload</a>
+      <a href="/index" class="item">New Upload</a>
       <div class="right menu">
-        <a class="item" href="/login">Log In</a>
-        <a class="item" href="/register">Create Account</a>
+        {{#if currentUser}}
+          <a class="item" href="/logout">Log Out</a>
+          <a class="item" href="/users/{{currentUser.id}}">View Profile</a>
+        {{else}}
+          <a class="item" href="/">Log In</a>
+          <a class="item" href="/register">Create Account</a>
+        {{/if}}
       </div>
     </div>
   </header>
+
+     <!-- Flash Message -->
+  <div class="ui text container flash">
+    {{#if error}}
+      <div class="ui red message"><h2>{{error}}</h2></div>
+    {{/if}}
+    {{#if success}}
+      <div class="ui green message"><h2>{{success}}</h2></div>
+    {{/if}}
+  </div>
 
     {{{ body }}}
 
