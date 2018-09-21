@@ -41,6 +41,10 @@ html, body {
   text-align: center;
 }
 
+.landing-logo {
+  margin-left: 3rem;
+}
+
 @media only screen and (max-device-width:480px){
   .landing {
     margin: auto;

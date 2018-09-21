@@ -1,19 +1,48 @@
-<form class="ui form">
-  <div class="ui container padded segment">
-    <div class="field">
-    <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name">
+
+<div class="ui container">
+  <div class="ui top attached segment box">
+    <h2>LETS GET DESIGNING</h2>
+    <p style="text-align: center">Upload your content and ideas to get started. The more details the better! Once you've finished we will handle the rest.</p>
+    <hr>
+    <form class="ui form" action="/submit" method="POST">
+      <div class="field">
+        <label>Name of request</label>
+        <textarea rows="2" type="text" name="request" placeholder="What project are we going to get started on?"></textarea>
+      </div>
+      <div class="field">
+        <label>File size</label>
+        <textarea rows="2" type="text" name="filesize" placeholder="File size or dimensions"></textarea>
+      </div>
+      <div class="field">
+        <label>Target audience</label>
+        <textarea rows="2" type="text" name="audience" placeholder="Who is the target audience for this design?"></textarea>
+      </div>
+      <div class="field">
+        <label>Inspiration</label>
+        <textarea type="text" name="inspiration" placeholder="We love inspiration. Share any links to designs you like here."></textarea>
+      </div>
+      <div class="field">
+        <label>What would you like to avoid?</label>
+        <textarea rows="3" type="text" name="avoid" placeholder="I could really live without..."></textarea>
+      </div>
+      <div class="field">
+        <label for="image">Upload your images</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+      <select name="priority" class="ui dropdown" id="select">
+        <option value="">Priority level</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <br>
+      <div class="field">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>I agree to the Terms and Conditions</label>
+        </div>
+      </div>
+      <button class="ui orange button">Submit</button>
+    </form>
   </div>
-  <div class="field">
-    <label>Last Name</label>
-    <input type="text" name="last-name" placeholder="Last Name">
-  </div>
-  <div class="field">
-    <div class="ui checkbox">
-      <input type="checkbox" tabindex="0" class="hidden">
-      <label>I agree to the Terms and Conditions</label>
-    </div>
-  </div>
-  <button class="ui button" type="submit">Submit</button>
-  </div>
-</form>
+</div>
