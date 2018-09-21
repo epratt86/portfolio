@@ -12,7 +12,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
 const path = require('path');
 const app = express();
-const sessionStore = new session.MemoryStore;
 const { User } = require('./server/models/user');
 const { Form } = require('./server/models/form');
 const { mongoose } = require('./server/db/mongoose');
@@ -33,11 +32,9 @@ app.use(cookieParser(process.env.COOKIE_PARSER));
 app.use(expressSanitizer());
 //express session middleware
 app.use(session({
-  secret: process.env.SESSION,
-  resave: true,
-  store: sessionStore,
-  saveUninitialized: true,
-  cookie: {maxAge: 60000 }
+  secret: process.env.SECRETSESSION,
+  resave: false,
+  saveUninitialized: false
 }));
 
 //passport config
