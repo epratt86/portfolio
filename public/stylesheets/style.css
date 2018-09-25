@@ -2,9 +2,33 @@ html, body {
   height: 100%;
   width: 100%;
   margin: 0;
+  background-color: #4b83b2;
+  font-family: 'Roboto', sans-serif;
+}
+
+.black-bar {
+  height: 4rem;
+  background-color: black;
+  color: white;
+  margin-top: -1.5rem;
+  width: 100%;
+}
+
+.coming-soon {
+  padding: 1rem;
+}
+
+.content {
+  text-align: center;
 }
 
 
 @media only screen and (max-device-width:480px){
  
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
 }
