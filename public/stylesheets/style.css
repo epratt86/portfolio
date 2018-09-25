@@ -6,8 +6,24 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.btn {
+  margin: auto 5px;
+}
+
+.black {
+  background-color: black;
+}
+
+.grey {
   text-align: center;
+  background-color: #e9ecef;
+  padding-top: 3rem;
+  height: 300px;
+  width: 66%;
+}
+
+#navlogo {
+  margin: 0 auto;
 }
 
 @media only screen and (max-device-width:480px){
