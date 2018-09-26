@@ -17,6 +17,19 @@ body {
     padding-top: calc(var(--jumbotron-padding-y) * 2);
     padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
+  .card {
+    max-width: 699px;
+    margin-left: 20%;
+  }
+}
+
+.offset {
+  font-size: 70%;
+  font-style: italic;
+}
+
+.big {
+  font-size: 4rem;
 }
 
 .jumbotron p:last-child {
@@ -31,6 +44,10 @@ body {
   max-width: 40rem;
 }
 
+.logo {
+  font-family: 'Montserrat', sans-serif;
+}
+
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -41,4 +58,13 @@ footer p {
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+#first-card {
+  max-width: 400px;
+}
+
+#second-card {
+  margin-top: 5rem;
+  max-width: 400px;
+}
 
