@@ -23,6 +23,11 @@ body {
   }
 }
 
+h3.card-title {
+  text-shadow: 2px 2px #5d5050;
+}
+
+
 .offset {
   font-size: 70%;
   font-style: italic;
@@ -60,11 +65,13 @@ footer p {
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
 #first-card {
-  max-width: 400px;
+  margin-top: 3rem;
+  max-width: 220px;
 }
 
 #second-card {
   margin-top: 5rem;
-  max-width: 400px;
+  max-width: 350px;
+  text-shadow: 2px 2px #ff0000
 }
 
