@@ -1,25 +1,84 @@
 <main class="main">
   
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
 
-      
-      <div class="card bg-dark text-white">
-        <img class="card-img" src="../img/me.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <h3 class="card-title">A little about <span class="big">me</span></h3>
-          <div id="first-card">
-            <p class="card-text">I'm a pretty typical San Diegan. I prefer working from where inspiration strikes. <span class="offset">*Usually after I've had a few waves</span></p>
-            <p class="card-text">No time to towel off, we've got work to do! <span class="offset">**after that breakfast burrito, of course</span></p>
-          </div>
-          <div id="second-card">
-            <h3 class="card-title">I am <span class="big">your</span> local web developer.</h3>
-            <p class="card-text"><span class="offset"></span></p>
+      <div class="col-sm-4">
+        <div class="card bg-dark text-white">
+          <img class="card-img me" src="../img/me.jpg" alt="Card image">
+          <div class="card-img-overlay">
+            <h3 class="card-title">A little about <span class="big">me</span></h3>
+            <div id="first-card">
+              <p class="card-text">Hi, I'm Eric and I'm a web developer. I like building clean sites that load fast look good on whatever device you have in front of you.</p>
+              <p class="card-text">I'm a pretty typical San Diegan. I prefer working from where inspiration strikes.</p>
+              <span class="offset">*Usually after I've had a few waves</span>
+              <p class="card-text"></p>
+            </div>
+            <div id="second-card">
+              <p class="card-text">If you have a small business or need a personal site done, I'll knock it out for you.</p>
+              <p class="card-text">No time to towel off, we've got work to do!</p>
+              <span class="offset">**after that breakfast burrito, of course</span>
+              <h3 class="card-title local">I am <span class="big">your</span> local web developer.</h3>
+            </div>
           </div>
         </div>
       </div>
 
+      <div class="col-sm-8">
+        <div class="leads">
+          <h1 class="text-center">Want a way to capture leads?</h1>
+          <h5 class="text-center">I can help! Fill out my lead-capture-thing-a-ma-jig</h5>
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Your Email">
+              </div>
+              <button class="btn btn-success disabled">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="content">
+          <div class="creds">
+            <h1 class="text-center">Need some credentials?</h1>
+            <h4 class="text-center">I get it!</h4>
+          </div>
+          <div class="card-group">
+            <div class="card">
+              <img class="card-img-top" src="../img/nodejs.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Learn Node.js</h5>
+                <p class="card-text">This so far has been my favorite course. Andrew Mead goes at a slow-n-steady pace and takes you though the basics of what node development is all about.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="../img/es6.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">JavaScript es6</h5>
+                <p class="card-text">Javascript gets a facelift! Wes Bos shows you the "before and afters".</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="../img/webdev.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Learn the fundamentals of Full-Stack development</h5>
+                <p class="card-text">Start from scratch. Course goes over the HTML basics all the way into deploying web apps.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="../img/learnNode.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">More Node!</h5>
+                <p class="card-text">Wes Bos shows you how to build a full-stack Node.js web app</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 
 </main>
