@@ -62,14 +62,15 @@ h3.card-title {
 
 .content {
   background-color: #fff;
-}
-.content h1 {
-  margin: 0;
-  padding: 1rem;
+  background-image: url(../img/pattern.png);
 }
 
 .creds {
   text-shadow: 2px 2px #f0fffe;
+}
+
+.creds h1 {
+  padding-top: 20px;
 }
 
 .local {
@@ -88,6 +89,11 @@ h3.card-title {
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.landing {
+  background-image: url(../img/pattern.png);
+  background-color: #bfffc3;
 }
 
 footer p {
