@@ -51,7 +51,7 @@ h3.card-title {
 }
 
 .leads {
-  background-color: #f0fffe;
+  background-color: #bfffc3;
   max-height: 188.75px;
   padding: 2rem;
 }
@@ -164,7 +164,7 @@ footer p {
     display: flex;
   }
   .me {
-    max-height: 230px;
+    max-height: none;
   }
   .main {
     font-size: 70%;
