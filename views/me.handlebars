@@ -28,13 +28,13 @@
         <div class="leads">
           <h1 class="text-center">Want a way to capture leads?</h1>
           <h5 class="text-center">I can help! Fill out my lead-capture-thing-a-ma-jig</h5>
-          <form>
+          <form action="/signup" method="POST">
             <div class="form-row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" name="name" placeholder="Your Name">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" class="form-control" name="email" placeholder="your@email.com">
               </div>
               <button class="btn btn-success disabled">Submit</button>
             </div>
