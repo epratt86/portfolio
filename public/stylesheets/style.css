@@ -24,7 +24,7 @@ body {
 }
 
 h3.card-title {
-  text-shadow: 4px 2px #9803036e;
+  text-shadow: 2px 2px black;
 }
 
 .offset {
@@ -136,6 +136,10 @@ footer p {
   .leads {
     min-height: 300px;
   }
+  #second-card {
+    margin-top: .7rem;
+    max-width: 230px;
+  }
 }
 
  /* Small devices (landscape phones, 576px and up) */
@@ -195,8 +199,14 @@ footer p {
     min-width: 100%;
     min-height: 100%;
   }
+  #first-card {
+    max-width: 150px;
+  }
   #left-side {
     display: flex;
+  }
+  #second-card {
+    max-width: 130px;
   }
 }
 
