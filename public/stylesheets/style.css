@@ -7,6 +7,10 @@ body {
   background-color: #f8f9fa;
 }
 
+header p {
+  color: #abb4bd;
+}
+
 
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
@@ -115,7 +119,6 @@ footer p {
 }
 
 #navbarHeader {
-  max-height: 300px;
   overflow: auto;
 }
 
