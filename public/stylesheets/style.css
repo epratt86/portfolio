@@ -140,6 +140,9 @@ footer p {
     margin-top: .7rem;
     max-width: 300px;
   }
+  #navbarHeader {
+    max-height: 500px;
+  }
 }
 
  /* Small devices (landscape phones, 576px and up) */
@@ -172,6 +175,9 @@ footer p {
   }
   .main {
     font-size: 70%;
+  }
+  #navbarHeader {
+    max-height: 200px;
   }
 }
 
@@ -207,6 +213,9 @@ footer p {
   }
   #second-card {
     max-width: 130px;
+  }
+  #navbarHeader {
+    max-height: 500px;
   }
 }
 
