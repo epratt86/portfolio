@@ -55,7 +55,8 @@ h3.card-title {
 }
 
 .leads {
-  background-color: #bfffc3;
+  background-color: #fffabf;
+  border-bottom: 1px solid black;
   max-height: 188.75px;
   padding: 2rem;
 }
@@ -67,10 +68,6 @@ h3.card-title {
 .content {
   background-color: #fff;
   background-image: url(../img/pattern.png);
-}
-
-.creds {
-  text-shadow: 2px 2px #f0fffe;
 }
 
 .creds h1 {
