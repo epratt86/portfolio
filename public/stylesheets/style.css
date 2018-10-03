@@ -116,6 +116,7 @@ footer p {
 }
 
 #navbarHeader {
+  max-height: 500px;
   overflow: auto;
 }
 
@@ -139,9 +140,6 @@ footer p {
   #second-card {
     margin-top: .7rem;
     max-width: 300px;
-  }
-  #navbarHeader {
-    max-height: 500px;
   }
 }
 
@@ -213,9 +211,6 @@ footer p {
   }
   #second-card {
     max-width: 130px;
-  }
-  #navbarHeader {
-    max-height: 500px;
   }
 }
 
