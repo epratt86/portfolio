@@ -141,6 +141,9 @@ footer p {
     margin-top: .7rem;
     max-width: 300px;
   }
+  #navbarHeader {
+    max-height: 400px;
+  }
 }
 
  /* Small devices (landscape phones, 576px and up) */
